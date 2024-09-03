@@ -20,11 +20,9 @@ class Quiz {
     }
     // 4. shuffleQuestions() Shuffles the elements stored in the questions array of the Quiz.
     shuffleQuestions(){
-        for (let i = this.questions.length - 1; i > 0; i--) { 
-            const questionsRandom = Math.floor(Math.random() * (i + 1)); 
-            [this.questions[i], this.questions[questionsRandom]] = [this.questions[questionsRandom], this.questions[i]]; 
-        } 
-        return this.questions; 
+        this.questions.sort((question1, question2) => {
+            return Math.floor(Math.random()*3) -1;
+        });
     }
 
     // 5. checkAnswer(answer) Checks if the passed answer is correct for the current question and increments correctAnswers by 1 if the answer is correct.

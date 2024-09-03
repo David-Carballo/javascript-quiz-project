@@ -1,4 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap');
 /* CSS Reset */
+
+/*
+casi blanco -> #F4FFF8
+casi negro -> #0D0F11
+gris -> #262729
+morado oscuro -> #8D5CF5
+morado claro -> #BBA2F1
+naranja -> #FFAA5B
+*/
+
 * {
     margin: 0;
     padding: 0;
@@ -6,8 +18,8 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Inter', 'Fira Mono', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #F4FFF8;
     color: #333;
     line-height: 1.6;
     padding: 20px;
@@ -15,16 +27,38 @@ body {
 
 header {
     padding: 0 20px;
+    /* color: #BBA2F1; */   
+    /* background: linear-gradient(#BBA2F1, #FFAA5B); */
+    
+}
+
+h1{
+
+  background-image: linear-gradient(to right, #BBA2F1 0%, #FFAA5B 70%);
+  background-clip: text;
+  color: transparent;
+}
+
+#subtitle {
+    font-family: "Fira Mono";
+    font-weight: 100;
+    font-size: 14px;
+    color: #F4FFF8;
 }
 
 .container {
-    height: 540px;
-    max-width: 600px;
+    height: 600px;
+    max-width: 720px;
     margin: auto;
     padding: 20px;
-    background: #fff;
+    background: #F4FFF8;
+    background-image: url("/img/Background.svg");
+    /* background-image: url("/img/Background.jpg"); */
+    background-size: cover;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 20px;
 }
+
 
 #quizView, #endView {
     overflow-y: auto;
@@ -41,22 +75,69 @@ header {
     margin-top: 20px;
 }
 
+#bottomSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+hr {
+    border: 0.5px solid #262729;
+    margin-bottom: 20px;
+}
+
+.radioButton{
+    background-color: #262729;
+    color: #F4FFF8;
+    width: 350px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    
+    font-family: "Fira Mono";
+    /*A determinar cuando tengamos todo completo*/
+    font-size: 16px;
+    font-weight: 100;
+    accent-color:#8D5CF5;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 24px;
+}
+
+.radioButton:hover{
+    background-color: #F4FFF8;
+    color: #262729;
+    transition: 0.5s;
+}
+
 button {
-    color: white;
+    color: #0D0F11;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
+    font-family: 'Fira Mono';
     font-size: 16px;
-    width: 160px;
+    width: 120px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button img{
+    height: 32px;
 }
 
 .button-primary {
-    background-color: #4caf50;
+    background-color: #BBA2F1;
 }
 
 .button-primary:hover {
-    background-color: #46a049;
+    background-color: #8D5CF5;
+    transition: background-color 0.5s;
 }
 
 .button-secondary {
@@ -73,7 +154,7 @@ button {
 
 
 button:hover {
-    background-color: #4cae4c;
+    background-color: #FFAA5B;
 }
 
 ul {
@@ -90,10 +171,14 @@ input[type="radio"] {
 }
 
 .emphasis, #startQuestionsCount, #questionCount, #resultQuestionsCount {
-    font-size: 16px;
-    font-weight: bold;
+    font-family: "Fira Mono";
+    font-size: 14px;
+    font-weight: 100;
     margin: 0 auto;
+    text-align: left;
     margin-bottom: 10px;
+    margin-top: 8px;
+    color:#F4FFF8
 }
 
 .content {
@@ -124,7 +209,7 @@ input[type="radio"] {
 
 #progress {
     width: 100%;
-    background-color: #ddd;
+    background-color: #F4FFF8;
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 5px;
@@ -132,14 +217,14 @@ input[type="radio"] {
 
 #progressBar {
     height: 20px;
-    background-color: #4caf50;
+    background-color: #FFAA5B;
     width: 0%;
     border-radius: 8px;
 }
 
 #result-progress {
     width: 100%;
-    background-color: #ddd;
+    background-color: #F4FFF8;
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 5px;
@@ -148,7 +233,7 @@ input[type="radio"] {
 .divider {
     width: 100%;
     height: 20px;
-    background-color: #ddd;
+    background-color: #F4FFF8;
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 5px;
@@ -157,16 +242,17 @@ input[type="radio"] {
 #resultProgressBar {
     width: 100%;
     height: 20px;
-    background-color: #4caf50;
+    background-color: #FFAA5B;
     width: 100%;
     border-radius: 8px;
 }
 
 #timeRemaining {
-    font-size: 14px;
-    font-style: italic;
-    color: #333;
-    margin: 0 auto;
-    margin-top: -35px;
-    margin-bottom: 12px;
+    font-family: 'Fira Mono';
+    font-size: 16px;
+
+    color: #F4FFF8;
+    margin: 0 0;
+    /* margin-top: -35px;
+    margin-bottom: 12px; */
 }

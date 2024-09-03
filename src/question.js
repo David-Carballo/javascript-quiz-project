@@ -9,12 +9,10 @@ class Question {
         this.difficulty = difficulty; //a number between 1 and 3, with 1 being the easiest and 3 being the hardest
     }
 
-    // 2. shuffleChoices()
     shuffleChoices() {
-        for (let i = this.choices.length - 1; i > 0; i--) { 
-            const choiceRandom = Math.floor(Math.random() * (i + 1)); 
-            [this.choices[i], this.choices[choiceRandom]] = [this.choices[choiceRandom], this.choices[i]]; 
-        } 
-        return this.choices; 
-    }; 
+        this.choices.sort((choice1, choice2)=>{
+            return Math.floor(Math.random()*3) -1;
+        });
+    }
 }
+
