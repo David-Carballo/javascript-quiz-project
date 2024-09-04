@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const questionContainer = document.querySelector("#question");
   const choiceContainer = document.querySelector("#choices");
   const nextButton = document.querySelector("#nextButton");
+  const restartButton = document.querySelector("#restartButton");
 
   // End view elements
   const resultContainer = document.querySelector("#result");
@@ -66,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   nextButton.addEventListener("click", nextButtonHandler);
 
+  restartButton.addEventListener("click", restartButtonHandler);
 
 
   /************  FUNCTIONS  ************/
@@ -105,14 +107,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // Update the orange progress bar (div#progressBar) width so that it shows the percentage of questions answered
     
     //console.log(quiz.questions.length);
-    progressBar.style.width = 100/quiz.questions.length +"%"; // This value is hardcoded as a placeholder
+    progressBar.style.width = quiz.currentQuestionIndex/(quiz.questions.length)*100 +"%"; // This value is hardcoded as a placeholder
 
 
 
     // 3. Update the question count text 
     // Update the question count (div#questionCount) show the current question out of total questions
     
-    questionCount.innerText = `Question ${quiz.currentQuestionIndex+1} of 10`; //  This value is hardcoded as a placeholder
+    questionCount.innerText = `Question ${quiz.currentQuestionIndex+1} of ${quiz.questions.length}`; //  This value is hardcoded as a placeholder
 
 
     //console.log(questionCount.innerText);
@@ -135,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-//ulNode.innerHTML += `<li>${inputNode.value}</li>`
+
 
 
       // Hint 1: You can use the `document.createElement()` method to create a new element.
@@ -164,11 +166,9 @@ document.addEventListener("DOMContentLoaded", () => {
     selectedAnswer.forEach((input) => {
       //Input es cada respuesta
       if(input.checked === true) {
-        if(quiz.checkAnswer(input.value) === true) {
-          console.log("Respuesta correcta");
-          quiz.moveToNextQuestion();
-          showQuestion();
-        }
+        quiz.checkAnswer(input.value);
+        quiz.moveToNextQuestion();
+        showQuestion();
       }
     });
       
@@ -192,7 +192,32 @@ document.addEventListener("DOMContentLoaded", () => {
     endView.style.display = "flex";
     
     // 3. Update the result container (div#result) inner text to show the number of correct answers out of total questions
-    resultContainer.innerText = `You scored 1 out of 1 correct answers!`; // This value is hardcoded as a placeholder
+    resultContainer.innerText = `You scored ${quiz.correctAnswers} out of ${quiz.questions.length} correct answers!`; // This value is hardcoded as a placeholder
+  }
+
+  function restartButtonHandler(){
+    // Hide the end view
+    endView.style.display = "none";
+    // Show the quiz view
+    quizView.style.display = "flex";
+    // Reset the quiz:
+    //Reset the currentQuestionIndex to 0
+    quiz.currentQuestionIndex = 0;
+    // Reset the correctAnswers to 0
+    quiz.correctAnswers = 0;
+    // Shuffle the questions
+    quiz.shuffleQuestions();
+    // Show the first question
+    //quiz.getQuestion();
+    showQuestion()
   }
   
 });
+
+// constructor (questions, timeLimit, timeRemaining) {
+//   this.questions = questions;
+//   this.timeLimit = timeLimit;
+//   this.timeRemaining = timeRemaining;
+//   this.correctAnswers = 0;
+//   this.currentQuestionIndex = 0;
+// }
