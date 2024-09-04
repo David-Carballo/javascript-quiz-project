@@ -29,6 +29,7 @@ class Quiz {
     checkAnswer(answer){
         if(answer === this.questions[this.currentQuestionIndex].answer){
             this.correctAnswers+=1;
+            return true;
         }
     }
 

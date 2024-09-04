@@ -87,7 +87,7 @@ hr {
     margin-bottom: 20px;
 }
 
-.radioButton{
+/* .radioButton{
     background-color: #262729;
     color: #F4FFF8;
     width: 350px;
@@ -97,14 +97,14 @@ hr {
     
     font-family: "Fira Mono";
     /*A determinar cuando tengamos todo completo*/
-    font-size: 16px;
+    /* font-size: 16px;
     font-weight: 100;
     accent-color:#8D5CF5;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     padding-left: 24px;
-}
+    }*/ 
 
 .radioButton:hover{
     background-color: #F4FFF8;
@@ -184,23 +184,55 @@ input[type="radio"] {
 .content {
     min-height: 300px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 #choices {
     min-width: 25px;
     margin: 0 auto;
-    text-align: left;
+    text-align: left; 
+}
+
+#choices div{
+    
+    background-color: #262729;
+    color: #F4FFF8;
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    
+    font-family: "Fira Mono";
+    /*A determinar cuando tengamos todo completo*/
+    font-size: 16px;
+    font-weight: 100;
+    accent-color:#8D5CF5;
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+    margin-bottom: 8px;
 }
 
 #quizDescription, #question, #result {
     font-size: 18px;
-    font-style: italic;
+   /*font-style: italic;*/
     color: #333;
     margin: 0 auto;
     margin-top: 20px;
     margin-bottom: 12px;
 }
+
+#question {
+    /*aquí los estilos de la pregunta*/
+    align-self: center;
+    color: #F4FFF8;
+    font-family: "Fira Mono";
+    font-size: 20px;
+
+}
+
+
 
 #quizDescription {
     margin-bottom: 20px;
