@@ -94,9 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Shuffle the choices of the current question by calling the method 'shuffleChoices()' on the question object
     question.shuffleChoices();
     
-    
-
-    // YOUR CODE HERE:
+        // YOUR CODE HERE:
     //
     // 1. Show the question
     // Update the inner text of the question container element and show the question text
@@ -108,8 +106,6 @@ document.addEventListener("DOMContentLoaded", () => {
     
     //console.log(quiz.questions.length);
     progressBar.style.width = quiz.currentQuestionIndex/(quiz.questions.length)*100 +"%"; // This value is hardcoded as a placeholder
-
-
 
     // 3. Update the question count text 
     // Update the question count (div#questionCount) show the current question out of total questions
@@ -136,9 +132,6 @@ document.addEventListener("DOMContentLoaded", () => {
       divChoices.innerHTML += `<label>${choice}</label>` 
 
     });
-
-
-
 
       // Hint 1: You can use the `document.createElement()` method to create a new element.
       // Hint 2: You can use the `element.type`, `element.name`, and `element.value` properties to set the type, name, and value of an element.
@@ -199,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Hide the end view
     endView.style.display = "none";
     // Show the quiz view
-    quizView.style.display = "flex";
+    quizView.style.display = "block";
     // Reset the quiz:
     //Reset the currentQuestionIndex to 0
     quiz.currentQuestionIndex = 0;
