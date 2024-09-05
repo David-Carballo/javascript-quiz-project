@@ -141,11 +141,14 @@ button img{
 }
 
 .button-secondary {
-    background-color: #333;
+    background-color: #BBA2F1;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .button-secondary:hover {
-    background-color: #1e1e1e;
+    background-color: #8D5CF5;
+    transition: background-color 0.5s;
 }
 .title {
     margin-top: 20px;
@@ -287,4 +290,12 @@ input[type="radio"] {
     margin: 0 0;
     /* margin-top: -35px;
     margin-bottom: 12px; */
+}
+
+#result{
+    color: #F4FFF8;
+    font-size: 20px;
+    font-family: "Fira Mono";
+    width: 100%;
+    padding-top: 32px;
 }
