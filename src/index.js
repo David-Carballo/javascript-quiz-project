@@ -47,8 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
   /************  SHOW INITIAL CONTENT  ************/
 
   // Convert the time remaining in seconds to minutes and seconds, and pad the numbers with zeros if needed
-  const minutes = Math.floor(quiz.timeRemaining / 60).toString().padStart(2, "0");
-  const seconds = (quiz.timeRemaining % 60).toString().padStart(2, "0");
+  let minutes = Math.floor(quiz.timeRemaining / 60).toString().padStart(2, "0");
+  let seconds = (quiz.timeRemaining % 60).toString().padStart(2, "0");
 
   // Display the time remaining in the time remaining container
   const timeRemainingContainer = document.getElementById("timeRemaining");
@@ -59,9 +59,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /************  TIMER  ************/
+  //quiz.timeRemaining=5;
+  let timer = setInterval(()=>{
+    quiz.timeRemaining-=1;
+    
+    minutes = Math.floor(quiz.timeRemaining / 60).toString().padStart(2, "0");
+    seconds = (quiz.timeRemaining % 60).toString().padStart(2, "0");
 
-  let timer;
-
+    console.log(quiz.timeRemaining)
+    timeRemainingContainer.innerText = `${minutes}:${seconds}`;
+    if(quiz.timeRemaining === 0){
+      clearInterval(timer);
+      showResults();
+    }
+  },1000);
+  
+  
 
   /************  EVENT LISTENERS  ************/
 
@@ -139,8 +152,6 @@ document.addEventListener("DOMContentLoaded", () => {
       // Hint 4: You can use the `element.innerText` property to set the inner text of an element.
 
   }
-
-
   
   function nextButtonHandler () {
     
@@ -171,9 +182,6 @@ document.addEventListener("DOMContentLoaded", () => {
       // Show the next question by calling the function `showQuestion()`.
   }  
 
-
-
-
   function showResults() {
 
     // YOUR CODE HERE:
@@ -202,15 +210,10 @@ document.addEventListener("DOMContentLoaded", () => {
     quiz.shuffleQuestions();
     // Show the first question
     //quiz.getQuestion();
+    quiz.timeRemaining=120;
     showQuestion()
+    
   }
   
 });
 
-// constructor (questions, timeLimit, timeRemaining) {
-//   this.questions = questions;
-//   this.timeLimit = timeLimit;
-//   this.timeRemaining = timeRemaining;
-//   this.correctAnswers = 0;
-//   this.currentQuestionIndex = 0;
-// }
