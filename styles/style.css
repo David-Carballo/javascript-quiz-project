@@ -53,8 +53,7 @@ h1{
     margin-top: 32px;
     padding: 20px;
     background: #0D0F11;
-    background-image: url("/img/Background.svg");
-    /* background-image: url("/img/Background.jpg"); */
+    background-image: url("../img/Background.jpg");
     background-size: cover;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     border-radius: 20px;
