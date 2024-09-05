@@ -27,11 +27,16 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // Array with the quiz questions
   const questions = [
-    new Question("What is 2 + 2?", ["3", "4", "5", "6"], "4", 1),
-    new Question("What is the capital of France?", ["Miami", "Paris", "Oslo", "Rome"], "Paris", 1),
-    new Question("Who created JavaScript?", ["Plato", "Brendan Eich", "Lea Verou", "Bill Gates"], "Brendan Eich", 2),
-    new Question("What is the mass–energy equivalence equation?", ["E = mc^2", "E = m*c^2", "E = m*c^3", "E = m*c"], "E = mc^2", 3),
-    // Add more questions here
+    //  (text, choices, answer, difficulty)
+      
+    new Question("¿Qué alimento es la verdadera debilidad de Jorge?", ["Patata", "Aguacate", "Tomate", "Manzana"], "Patata", 1),
+    new Question("¿Cuál es el mejor momento de un día en Ironhack?", ["El café de las 10:30", "Cada vez que Jorge dice -Patata-", "Las clases de DOM", "Las 18:00 de la tarde"], "las 18:00 de la tarde", 1),
+    new Question("¿Cuál es la edad real de Jorge, esa que siempre evita decirnos?", ["18", "undefined", "73", "54"], "undefined", 1),
+    new Question("¿Quién se lleva el título de 'Mejor Sombrero del Año'?", ["Jesús", "Perro de Diego", "Pedro", "Sofía", "Cubo de Rubik de Clara"], "Jesús", 1),
+    new Question("¿Cuál es la serie que tiene un altar en casa de Jorge?", ["Naruto", "The Office", "Friends", "Perdidos"], "Naruto", 1),
+    new Question("¿Cómo planea Javi revolucionar su peinado la semana que viene?", ["Rosa chicle", "Arcoiris", "Se va a rapar", "Verde fosforito"], "Se va a rapar", 1),
+    new Question("¿Quién es el miembro más misterioso del grupo?", ["Cristina", "Pedro", "Alejandro", "Ángela"], "Cristina", 1),
+   
   ];
   const quizDuration = 120; // 120 seconds (2 minutes)
 
