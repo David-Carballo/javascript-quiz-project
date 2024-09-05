@@ -47,9 +47,10 @@ h1{
 }
 
 .container {
-    height: 600px;
+    height: 680px;
     max-width: 720px;
     margin: auto;
+    margin-top: 32px;
     padding: 20px;
     background: #F4FFF8;
     background-image: url("/img/Background.svg");
@@ -112,6 +113,15 @@ button img{
     height: 32px;
 }
 
+#nextButton{
+    background-color: #FFAA5B;
+}
+
+#nextButton:hover{
+    background-color: #ec8524;
+    transition: background-color 0.5s;
+}
+
 .button-primary {
     background-color: #BBA2F1;
 }
@@ -166,10 +176,26 @@ input[type="radio"] {
 }
 
 .content {
-    min-height: 300px;
+    height: 350px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+#hint2 {
+    height: 32px;
+}
+
+#hint2 p{
+    font-family: "Fira Mono";
+    color:#FFAA5B;
+    position: relative;
+    top: -40px;
+
+}
+
+#hintButton img, #hint2Button img{
+    height: 24px;
+    padding-left: 8px;
 }
 
 #choices {
@@ -179,7 +205,6 @@ input[type="radio"] {
 }
 
 #choices div{
-    
     background-color: #262729;
     color: #F4FFF8;
     width: 300px;
@@ -196,6 +221,11 @@ input[type="radio"] {
     align-items: center;
     padding-left: 24px;
     margin-bottom: 8px;
+}
+
+#choices div:hover{
+    color: #262729;
+    background-color:#FFAA5B;
 }
 
 #quizDescription, #question, #result {
@@ -215,7 +245,7 @@ input[type="radio"] {
     font-size: 20px;
     margin: 0;
     width: 300px;
-    padding-bottom: 64px;
+    padding-bottom: 96px;
 }
 
 

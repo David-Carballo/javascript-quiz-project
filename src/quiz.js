@@ -16,6 +16,7 @@ class Quiz {
     
     // 3. moveToNextQuestion() When called, increments the currentQuestionIndex by 1.
     moveToNextQuestion(){
+        
         this.currentQuestionIndex++;
     }
     // 4. shuffleQuestions() Shuffles the elements stored in the questions array of the Quiz.
