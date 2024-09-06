@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Las clases de DOM",
         "Las 18:00 de la tarde",
       ],
-      "las 18:00 de la tarde",
+      "Las 18:00 de la tarde",
       1,
       "Ese punto del día donde todos estamos en modo 'supervivencia'."
     ),
